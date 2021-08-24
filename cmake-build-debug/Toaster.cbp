@@ -8,143 +8,141 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/BARJI/Desktop/Toaster/cmake-build-debug"/>
+				<Option working_dir="C:/Users/BARJI/Documents/GitHub/Toaster/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Desktop/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Desktop/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Desktop/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Desktop/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Documents/GitHub/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Documents/GitHub/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Documents/GitHub/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Documents/GitHub/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Toaster">
-				<Option output="C:/Users/BARJI/Desktop/Toaster/Toaster.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/BARJI/Desktop/Toaster"/>
+				<Option output="C:/Users/BARJI/Documents/GitHub/Toaster/Toaster.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/BARJI/Documents/GitHub/Toaster"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="C:/Users/BARJI/Desktop/Toaster/include"/>
-					<Add directory="C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../include/c++/10.3.0"/>
-					<Add directory="C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../include/c++/10.3.0/x86_64-w64-mingw32"/>
-					<Add directory="C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../include/c++/10.3.0/backward"/>
-					<Add directory="C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/include"/>
-					<Add directory="C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../include"/>
-					<Add directory="C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/include-fixed"/>
-					<Add directory="C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="C:/Users/BARJI/Documents/GitHub/Toaster/include"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Desktop/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 Toaster"/>
-					<CompileFile command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Desktop/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Desktop/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Desktop/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Documents/GitHub/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 Toaster"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Documents/GitHub/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Documents/GitHub/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Documents/GitHub/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Toaster/fast">
-				<Option output="C:/Users/BARJI/Desktop/Toaster/Toaster.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/BARJI/Desktop/Toaster"/>
+				<Option output="C:/Users/BARJI/Documents/GitHub/Toaster/Toaster.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/BARJI/Documents/GitHub/Toaster"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="C:/Users/BARJI/Desktop/Toaster/include"/>
-					<Add directory="C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../include/c++/10.3.0"/>
-					<Add directory="C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../include/c++/10.3.0/x86_64-w64-mingw32"/>
-					<Add directory="C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../include/c++/10.3.0/backward"/>
-					<Add directory="C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/include"/>
-					<Add directory="C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../include"/>
-					<Add directory="C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/include-fixed"/>
-					<Add directory="C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="C:/Users/BARJI/Documents/GitHub/Toaster/include"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Desktop/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 Toaster/fast"/>
-					<CompileFile command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Desktop/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Desktop/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Desktop/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Documents/GitHub/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 Toaster/fast"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Documents/GitHub/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Documents/GitHub/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Documents/GitHub/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/Users/BARJI/Desktop/Toaster/cmake-build-debug"/>
+				<Option working_dir="C:/Users/BARJI/Documents/GitHub/Toaster/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Desktop/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Desktop/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Desktop/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Desktop/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Documents/GitHub/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Documents/GitHub/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Documents/GitHub/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Documents/GitHub/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/BARJI/Desktop/Toaster/cmake-build-debug"/>
+				<Option working_dir="C:/Users/BARJI/Documents/GitHub/Toaster/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Desktop/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Desktop/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Desktop/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Desktop/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Documents/GitHub/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Documents/GitHub/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Documents/GitHub/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Documents/GitHub/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/code/Camera.cpp">
+		<Unit filename="C:/Users/BARJI/Documents/GitHub/Toaster/src/code/Camera.cpp">
 			<Option target="Toaster"/>
 		</Unit>
-		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/code/Cube.cpp">
+		<Unit filename="C:/Users/BARJI/Documents/GitHub/Toaster/src/code/Cube.cpp">
 			<Option target="Toaster"/>
 		</Unit>
-		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/code/EBO.cpp">
+		<Unit filename="C:/Users/BARJI/Documents/GitHub/Toaster/src/code/EBO.cpp">
 			<Option target="Toaster"/>
 		</Unit>
-		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/code/HelperFunctions.cpp">
+		<Unit filename="C:/Users/BARJI/Documents/GitHub/Toaster/src/code/HelperFunctions.cpp">
 			<Option target="Toaster"/>
 		</Unit>
-		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/code/ImageLoader.cpp">
+		<Unit filename="C:/Users/BARJI/Documents/GitHub/Toaster/src/code/ImageLoader.cpp">
 			<Option target="Toaster"/>
 		</Unit>
-		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/code/Shader.cpp">
+		<Unit filename="C:/Users/BARJI/Documents/GitHub/Toaster/src/code/Shader.cpp">
 			<Option target="Toaster"/>
 		</Unit>
-		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/code/Texture.cpp">
+		<Unit filename="C:/Users/BARJI/Documents/GitHub/Toaster/src/code/Texture.cpp">
 			<Option target="Toaster"/>
 		</Unit>
-		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/code/VAO.cpp">
+		<Unit filename="C:/Users/BARJI/Documents/GitHub/Toaster/src/code/VAO.cpp">
 			<Option target="Toaster"/>
 		</Unit>
-		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/code/VBO.cpp">
+		<Unit filename="C:/Users/BARJI/Documents/GitHub/Toaster/src/code/VBO.cpp">
 			<Option target="Toaster"/>
 		</Unit>
-		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/code/glad.c">
+		<Unit filename="C:/Users/BARJI/Documents/GitHub/Toaster/src/code/glad.c">
 			<Option target="Toaster"/>
 		</Unit>
-		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/code/main.cpp">
+		<Unit filename="C:/Users/BARJI/Documents/GitHub/Toaster/src/code/main.cpp">
 			<Option target="Toaster"/>
 		</Unit>
-		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/headers/Camera.hpp">
+		<Unit filename="C:/Users/BARJI/Documents/GitHub/Toaster/src/headers/Camera.hpp">
 			<Option target="Toaster"/>
 		</Unit>
-		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/headers/Cube.hpp">
+		<Unit filename="C:/Users/BARJI/Documents/GitHub/Toaster/src/headers/Cube.hpp">
 			<Option target="Toaster"/>
 		</Unit>
-		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/headers/EBO.hpp">
+		<Unit filename="C:/Users/BARJI/Documents/GitHub/Toaster/src/headers/EBO.hpp">
 			<Option target="Toaster"/>
 		</Unit>
-		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/headers/HelperFunctions.hpp">
+		<Unit filename="C:/Users/BARJI/Documents/GitHub/Toaster/src/headers/HelperFunctions.hpp">
 			<Option target="Toaster"/>
 		</Unit>
-		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/headers/Mesh.hpp">
+		<Unit filename="C:/Users/BARJI/Documents/GitHub/Toaster/src/headers/Mesh.hpp">
 			<Option target="Toaster"/>
 		</Unit>
-		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/headers/Shader.hpp">
+		<Unit filename="C:/Users/BARJI/Documents/GitHub/Toaster/src/headers/Shader.hpp">
 			<Option target="Toaster"/>
 		</Unit>
-		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/headers/Texture.hpp">
+		<Unit filename="C:/Users/BARJI/Documents/GitHub/Toaster/src/headers/Texture.hpp">
 			<Option target="Toaster"/>
 		</Unit>
-		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/headers/VAO.hpp">
+		<Unit filename="C:/Users/BARJI/Documents/GitHub/Toaster/src/headers/VAO.hpp">
 			<Option target="Toaster"/>
 		</Unit>
-		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/headers/VBO.hpp">
+		<Unit filename="C:/Users/BARJI/Documents/GitHub/Toaster/src/headers/VBO.hpp">
 			<Option target="Toaster"/>
 		</Unit>
-		<Unit filename="C:/Users/BARJI/Desktop/Toaster/CMakeLists.txt">
+		<Unit filename="C:/Users/BARJI/Documents/GitHub/Toaster/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

@@ -1,8 +1,8 @@
 #include "../headers/HelperFunctions.hpp"
 
-GLFWwindow* CreateWindow(glm::vec2 windowSize)
+GLFWwindow *CreateWindow(glm::vec2 windowSize)
 {
-    GLFWwindow* window = glfwCreateWindow(windowSize.x, windowSize.y, "Toaster", NULL, NULL);
+    GLFWwindow *window = glfwCreateWindow(windowSize.x, windowSize.y, "Toaster", NULL, NULL);
     glfwMakeContextCurrent(window);
     return window;
 }
@@ -22,7 +22,7 @@ bool InitialiseGLFW()
     return true;
 }
 
-void FramebufferSizeCallback(GLFWwindow* window, int width, int height)
+void FramebufferSizeCallback(GLFWwindow *window, int width, int height)
 {
     glViewport(0, 0, width, height);
 }

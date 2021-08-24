@@ -7,16 +7,16 @@
 #include "../headers/Cube.hpp"
 #include "../headers/Camera.hpp"
 
-void HandleDeltaTime(float& deltaTime, float& lastFrame);
+void HandleDeltaTime(float &deltaTime, float &lastFrame);
 
 int main()
 {
     float deltaTime = 0.0f;
     float lastFrame = 0.0f;
 
-    #pragma region Library Setup
+#pragma region Library Setup
 
-    if(!InitialiseGLFW())
+    if (!InitialiseGLFW())
     {
         std::cout << "GLFW failed to initialise." << std::endl;
         return -1;
@@ -24,7 +24,7 @@ int main()
 
     //Create a window
     glm::vec2 windowSize = glm::vec2(1920, 1080);
-    GLFWwindow* window = CreateWindow(windowSize);
+    GLFWwindow *window = CreateWindow(windowSize);
 
     if (!window)
     {
@@ -33,7 +33,7 @@ int main()
         return -1;
     }
 
-    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+    if (!gladLoadGLLoader((GLADloadproc) glfwGetProcAddress))
     {
         std::cout << "GLAD failed to load..." << std::endl;
         return -1;
@@ -41,7 +41,7 @@ int main()
 
     glfwSetFramebufferSizeCallback(window, FramebufferSizeCallback);
 
-    #pragma endregion
+#pragma endregion
 
     glViewport(0, 0, windowSize.x, windowSize.y);
     glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
@@ -49,7 +49,8 @@ int main()
     Cube cube1;
     Camera camera;
 
-    glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)windowSize.x / (float)windowSize.y, 0.1f, 100.0f);
+    glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float) windowSize.x / (float) windowSize.y, 0.1f,
+                                            100.0f);
 
     glEnable(GL_DEPTH_TEST);
     while (!glfwWindowShouldClose(window))
@@ -68,7 +69,7 @@ int main()
     return 0;
 }
 
-void HandleDeltaTime(float& deltaTime, float& lastFrame)
+void HandleDeltaTime(float &deltaTime, float &lastFrame)
 {
     float currentFrame = glfwGetTime();
     deltaTime = currentFrame - lastFrame;

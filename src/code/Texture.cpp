@@ -1,51 +1,51 @@
 #include "../headers/Texture.hpp"
 
-Texture::Texture(const char* image, GLenum texType, GLenum slot, GLenum format, GLenum pixelType)
+Texture::Texture(const char *image, GLenum texType, GLenum slot, GLenum format, GLenum pixelType)
 {
-	type = texType;
+    type = texType;
 
-	int widthImg, heightImg, numColCh;
+    int widthImg, heightImg, numColCh;
 
-	stbi_set_flip_vertically_on_load(true);
+    stbi_set_flip_vertically_on_load(true);
 
-	unsigned char* bytes = stbi_load(image, &widthImg, &heightImg, &numColCh, 0);
+    unsigned char *bytes = stbi_load(image, &widthImg, &heightImg, &numColCh, 0);
 
-	glGenTextures(1, &ID);
-	glActiveTexture(slot);
-	glBindTexture(texType, ID);
+    glGenTextures(1, &ID);
+    glActiveTexture(slot);
+    glBindTexture(texType, ID);
 
-	glTexParameteri(texType, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-	glTexParameteri(texType, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+    glTexParameteri(texType, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glTexParameteri(texType, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 
-	glTexParameteri(texType, GL_TEXTURE_WRAP_S, GL_REPEAT);
-	glTexParameteri(texType, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    glTexParameteri(texType, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(texType, GL_TEXTURE_WRAP_T, GL_REPEAT);
 
-	glTexImage2D(texType, 0, GL_RGBA, widthImg, heightImg, 0, format, pixelType, bytes);
-	glGenerateMipmap(texType);
+    glTexImage2D(texType, 0, GL_RGBA, widthImg, heightImg, 0, format, pixelType, bytes);
+    glGenerateMipmap(texType);
 
-	stbi_image_free(bytes);
+    stbi_image_free(bytes);
 
-	glBindTexture(texType, 0);
+    glBindTexture(texType, 0);
 }
 
-void Texture::TexUnit(Shader shader, const char* uniform, GLuint unit)
+void Texture::TexUnit(Shader shader, const char *uniform, GLuint unit)
 {
-	GLuint texUni = glGetUniformLocation(shader.GetID(), uniform);
-	shader.Use();
-	glUniform1i(texUni, unit);
+    GLuint texUni = glGetUniformLocation(shader.GetID(), uniform);
+    shader.Use();
+    glUniform1i(texUni, unit);
 }
 
 void Texture::Bind()
 {
-	glBindTexture(type, ID);
+    glBindTexture(type, ID);
 }
 
 void Texture::Unbind()
 {
-	glBindTexture(type, 0);
+    glBindTexture(type, 0);
 }
 
 void Texture::Delete()
 {
-	glDeleteTextures(1, &ID);
+    glDeleteTextures(1, &ID);
 }

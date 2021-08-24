@@ -7,13 +7,17 @@
 class VAO
 {
 public:
-	GLuint ID;
-	VAO();
+    GLuint ID;
 
-	void LinkVBO(VBO vbo, GLuint layout);
-	void Bind();
-	void Unbind();
-	void Delete();
+    VAO();
+
+    void LinkAttrib(VBO& vbo, GLuint location, GLuint numComponentsPerVertex, GLenum type, GLuint stride, void* offset);
+
+    void Bind();
+
+    void Unbind();
+
+    void Delete();
 };
 
 #endif

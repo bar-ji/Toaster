@@ -14,12 +14,9 @@ struct Vertex
     glm::vec2 texUV;
 };
 
-
 class VBO : public Buffer
 {
 public:
-    GLuint ID;
-
     VBO(std::vector<Vertex>& vertices);
 
     void Bind() override;

@@ -10,21 +10,20 @@
 
 class Mesh
 {
-public:
+private :
     std::vector<Vertex> vertices;
     std::vector<GLuint> indices;
-
-    glm::mat4 model;
+    Texture texture;
 
     glm::vec3 position;
     glm::vec3 scale;
     glm::vec3 rotation;
 
     VAO vao;
+public:
+    Mesh(std::vector <Vertex>& vertices, std::vector <GLuint>& indices, Texture texture);
 
-    Mesh(std::vector <Vertex>& vertices, std::vector <GLuint>& indices);
-
-    void Draw(Shader& shader, Camera& camera, glm::mat4 projection);
+    void Draw(Shader& shader, Camera& camera);
 };
 
 

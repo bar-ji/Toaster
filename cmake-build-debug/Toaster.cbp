@@ -87,9 +87,6 @@
 		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/code/Camera.cpp">
 			<Option target="Toaster"/>
 		</Unit>
-		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/code/Cube.cpp">
-			<Option target="Toaster"/>
-		</Unit>
 		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/code/EBO.cpp">
 			<Option target="Toaster"/>
 		</Unit>
@@ -124,9 +121,6 @@
 			<Option target="Toaster"/>
 		</Unit>
 		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/headers/Camera.hpp">
-			<Option target="Toaster"/>
-		</Unit>
-		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/headers/Cube.hpp">
 			<Option target="Toaster"/>
 		</Unit>
 		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/headers/EBO.hpp">

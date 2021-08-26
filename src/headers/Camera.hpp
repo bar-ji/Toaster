@@ -15,8 +15,15 @@ private:
     glm::vec3 forward;
     glm::vec3 up;
     glm::vec3 rotation;
-
+    glm::mat4 projection;
     float zoom = 10.0f;
+
+    float fov;
+    float aspectRatio;
+    float nearPlane;
+    float farPlane;
+
+    //Projection
 
 public:
     Camera(glm::vec3 position, glm::vec3 forward, glm::vec3 up, glm::vec3 rotation);
@@ -24,6 +31,8 @@ public:
     Camera();
 
     glm::mat4 GetViewMatrix();
+
+    glm::mat4 GetProjectionMatrix();
 
     glm::vec3 GetCameraPos();
 
@@ -34,6 +43,8 @@ public:
     glm::vec3 GetRotation();
 
     float GetZoom();
+
+    void SetProjectionMatrix(float fov, float aspectRatio, float nearPlane, float farPlane);
 
     void SetCameraPos(glm::vec3 position);
 

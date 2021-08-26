@@ -1,7 +1,9 @@
 #ifndef BUFFER_H
 #define BUFFER_H
 
-class Buffer {
+class Buffer{
+protected:
+    GLuint ID;
 public:
     virtual void Bind() = 0;
     virtual void Unbind() = 0;

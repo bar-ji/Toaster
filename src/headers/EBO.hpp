@@ -8,8 +8,6 @@
 class EBO : public Buffer
 {
 public:
-    GLuint ID;
-
     EBO(std::vector<GLuint>& indices);
 
     void Bind() override;

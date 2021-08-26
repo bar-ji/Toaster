@@ -7,20 +7,20 @@
 #include "../headers/Mesh.hpp"
 #include "../headers/Camera.hpp"
 
-Vertex vertices[] = {
-        //Top
+const Vertex vertices[] = {
+        //Top Positions
         Vertex{glm::vec3(-0.5f, 0.5f, -0.5f), glm::vec3(), glm::vec3(), glm::vec2()},
         Vertex{glm::vec3(-0.5f, 0.5f, 0.5f), glm::vec3(), glm::vec3(), glm::vec2()},
         Vertex{glm::vec3(0.5f, 0.5f, 0.5f), glm::vec3(), glm::vec3(), glm::vec2()},
         Vertex{glm::vec3(0.5f, 0.5f, -0.5f), glm::vec3(), glm::vec3(), glm::vec2()},
 
-        //Bottom
+        //Bottom Positions
         Vertex{glm::vec3(-0.5f, -0.5f, -0.5f), glm::vec3(), glm::vec3(), glm::vec2()},
         Vertex{glm::vec3(-0.5f, -0.5f, 0.5f), glm::vec3(), glm::vec3(), glm::vec2()},
         Vertex{glm::vec3(0.5f, -0.5f, 0.5f), glm::vec3(), glm::vec3(), glm::vec2()},
         Vertex{glm::vec3(0.5f, -0.5f, -0.5f), glm::vec3(), glm::vec3(), glm::vec2()},
         };
-GLuint indices[]{
+const GLuint indices[]{
     //Top
     0, 1, 2,
     2, 3, 0,
@@ -54,7 +54,7 @@ int main()
     float deltaTime = 0.0f;
     float lastFrame = 0.0f;
 
-#pragma region Library Setup
+    #pragma region Library Setup
 
     if (!InitialiseGLFW())
     {
@@ -81,19 +81,19 @@ int main()
 
     glfwSetFramebufferSizeCallback(window, FramebufferSizeCallback);
 
-#pragma endregion
+    #pragma endregion
 
     glViewport(0, 0, windowSize.x, windowSize.y);
     glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
 
     std::vector<Vertex> verts(vertices, vertices + sizeof(vertices) / sizeof(Vertex));
-    std::vector<GLuint> ind(indices, indices + sizeof(indices) / sizeof(GLuint));
-    Mesh cube(verts, ind);
+    std::vector<GLuint> inds(indices, indices + sizeof(indices) / sizeof(GLuint));
+    Texture texture("resources/textures/test.png", GL_TEXTURE_2D, 0, GL_RGBA, GL_UNSIGNED_BYTE);
+    Mesh cube(verts, inds, texture);
     Shader cubeShader("resources/cubev.glsl", "resources/cubef.glsl");
 
     Camera camera;
-
-    glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float) windowSize.x / (float) windowSize.y, 0.1f,100.0f);
+    camera.SetProjectionMatrix(45.0f, (float) windowSize.x / (float) windowSize.y, 0.1f,100.0f);
 
     glEnable(GL_DEPTH_TEST);
     while (!glfwWindowShouldClose(window))
@@ -102,7 +102,7 @@ int main()
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         camera.InputHandler(window, deltaTime);
-        cube.Draw(cubeShader, camera, projection);
+        cube.Draw(cubeShader, camera);
         glfwSwapBuffers(window);
         glfwPollEvents();
     }

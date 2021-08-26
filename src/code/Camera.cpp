@@ -30,6 +30,11 @@ glm::mat4 Camera::GetViewMatrix()
     return view;
 }
 
+glm::mat4 Camera::GetProjectionMatrix()
+{
+    return projection;
+}
+
 glm::vec3 Camera::GetCameraPos()
 { return position; }
 
@@ -44,6 +49,16 @@ glm::vec3 Camera::GetRotation()
 
 float Camera::GetZoom()
 { return zoom; }
+
+void Camera::SetProjectionMatrix(float fov, float aspectRatio, float nearPlane, float farPlane)
+{
+    Camera::fov = fov;
+    Camera::aspectRatio = aspectRatio;
+    Camera::nearPlane = nearPlane;
+    Camera::farPlane = farPlane;
+
+    Camera::projection = glm::perspective(glm::radians(fov), aspectRatio, nearPlane,farPlane);
+}
 
 void Camera::SetCameraPos(glm::vec3 position)
 {

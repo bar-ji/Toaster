@@ -4,6 +4,7 @@
 #include<glad/glad.h>
 #include<glm/glm.hpp>
 #include<vector>
+#include"Buffer.hpp"
 
 struct Vertex
 {
@@ -14,18 +15,18 @@ struct Vertex
 };
 
 
-class VBO
+class VBO : public Buffer
 {
 public:
     GLuint ID;
 
     VBO(std::vector<Vertex>& vertices);
 
-    void Bind();
+    void Bind() override;
 
-    void Unbind();
+    void Unbind() override;
 
-    void Delete();
+    void Delete() override;
 };
 
 #endif

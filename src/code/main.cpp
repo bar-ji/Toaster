@@ -4,8 +4,48 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include "../headers/HelperFunctions.hpp"
-#include "../headers/Cube.hpp"
+#include "../headers/Mesh.hpp"
 #include "../headers/Camera.hpp"
+
+Vertex vertices[] = {
+        //Top
+        Vertex{glm::vec3(-0.5f, 0.5f, -0.5f), glm::vec3(), glm::vec3(), glm::vec2()},
+        Vertex{glm::vec3(-0.5f, 0.5f, 0.5f), glm::vec3(), glm::vec3(), glm::vec2()},
+        Vertex{glm::vec3(0.5f, 0.5f, 0.5f), glm::vec3(), glm::vec3(), glm::vec2()},
+        Vertex{glm::vec3(0.5f, 0.5f, -0.5f), glm::vec3(), glm::vec3(), glm::vec2()},
+
+        //Bottom
+        Vertex{glm::vec3(-0.5f, -0.5f, -0.5f), glm::vec3(), glm::vec3(), glm::vec2()},
+        Vertex{glm::vec3(-0.5f, -0.5f, 0.5f), glm::vec3(), glm::vec3(), glm::vec2()},
+        Vertex{glm::vec3(0.5f, -0.5f, 0.5f), glm::vec3(), glm::vec3(), glm::vec2()},
+        Vertex{glm::vec3(0.5f, -0.5f, -0.5f), glm::vec3(), glm::vec3(), glm::vec2()},
+        };
+GLuint indices[]{
+    //Top
+    0, 1, 2,
+    2, 3, 0,
+
+    //Bottom
+    4, 5, 6,
+    6, 7, 4,
+
+    //Right
+    2, 3, 7,
+    7, 6, 2,
+
+    //Left
+    0, 1, 5,
+    5, 4, 0,
+
+    //Front
+    1, 2, 6,
+    6, 5, 1,
+
+    //Back
+    0, 3, 7,
+    7, 4, 0
+};
+
 
 void HandleDeltaTime(float &deltaTime, float &lastFrame);
 
@@ -46,11 +86,14 @@ int main()
     glViewport(0, 0, windowSize.x, windowSize.y);
     glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
 
-    Cube cube1;
+    std::vector<Vertex> verts(vertices, vertices + sizeof(vertices) / sizeof(Vertex));
+    std::vector<GLuint> ind(indices, indices + sizeof(indices) / sizeof(GLuint));
+    Mesh cube(verts, ind);
+    Shader cubeShader("resources/cubev.glsl", "resources/cubef.glsl");
+
     Camera camera;
 
-    glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float) windowSize.x / (float) windowSize.y, 0.1f,
-                                            100.0f);
+    glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float) windowSize.x / (float) windowSize.y, 0.1f,100.0f);
 
     glEnable(GL_DEPTH_TEST);
     while (!glfwWindowShouldClose(window))
@@ -58,9 +101,8 @@ int main()
         HandleDeltaTime(deltaTime, lastFrame);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        cube1.Draw(camera.GetViewMatrix(), projection);
         camera.InputHandler(window, deltaTime);
-
+        cube.Draw(cubeShader, camera, projection);
         glfwSwapBuffers(window);
         glfwPollEvents();
     }

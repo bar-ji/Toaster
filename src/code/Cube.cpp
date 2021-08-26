@@ -8,7 +8,6 @@ Cube::Cube() : shader("resources/cubev.glsl", "resources/cubef.glsl")
     VBO vbo(verts);
     EBO ebo(ind);
     vao.LinkAttrib(vbo, 0, 3, GL_FLOAT, sizeof(Vertex), (void*)0);
-    vbo.Unbind();
     vao.Unbind();
 
     model = glm::mat4(1.0f);

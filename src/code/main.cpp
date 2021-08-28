@@ -63,7 +63,7 @@ int main()
     }
 
     //Create a window
-    glm::vec2 windowSize = glm::vec2(1920, 1080);
+    glm::vec2 windowSize = glm::vec2(1280, 720);
     GLFWwindow *window = CreateWindow(windowSize);
 
     if (!window)

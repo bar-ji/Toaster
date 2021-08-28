@@ -18,8 +18,8 @@ endif()
 
 FILE(GLOB SOURCE_FILES "${CMAKE_CURRENT_SOURCE_DIR}/src/code/*.cpp" "${CMAKE_CURRENT_SOURCE_DIR}/src/code/*.c")
 FILE(GLOB HEADER_FILES "${CMAKE_CURRENT_SOURCE_DIR}/src/headers/*.hpp" "${CMAKE_CURRENT_SOURCE_DIR}/src/headers/*.h")
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
-add_executable(Toaster ${SOURCE_FILES} ${HEADER_FILES} src/code/Shader.cpp)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR})
+add_executable(Toaster ${SOURCE_FILES} ${HEADER_FILES})
 
 if(APPLE)
     target_link_libraries(${PROJECT_NAME} glfw3 "-framework Cocoa" "-framework OpenGL" "-framework IOKit")

@@ -63,7 +63,7 @@ int main()
     }
 
     //Create a window
-    glm::vec2 windowSize = glm::vec2(1280, 720);
+    glm::vec2 windowSize = glm::vec2(1920, 1080);
     GLFWwindow *window = CreateWindow(windowSize);
 
     if (!window)
@@ -100,7 +100,6 @@ int main()
     {
         HandleDeltaTime(deltaTime, lastFrame);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
         camera.InputHandler(window, deltaTime);
         cube.Draw(cubeShader, camera);
         glfwSwapBuffers(window);

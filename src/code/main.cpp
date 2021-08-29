@@ -92,7 +92,7 @@ int main()
     std::vector<GLuint> inds(indices, indices + sizeof(indices) / sizeof(GLuint));
     Texture texture("resources/textures/test.png", GL_TEXTURE_2D, 0, GL_RGBA, GL_UNSIGNED_BYTE);
     Mesh cube(verts, inds, texture);
-    Shader cubeShader("resources/cubev.glsl", "resources/cubef.glsl");
+    Shader cubeShader("../resources/cubev.glsl", "../resources/cubef.glsl");
 
     Camera camera;
     camera.SetProjectionMatrix(45.0f, (float) windowSize.x / (float) windowSize.y, 0.1f,100.0f);

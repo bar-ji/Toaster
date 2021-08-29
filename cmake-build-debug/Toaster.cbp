@@ -38,8 +38,8 @@
 				</MakeCommands>
 			</Target>
 			<Target title="Toaster">
-				<Option output="/Users/jacklomax/Documents/GitHub/Toaster/Toaster" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/jacklomax/Documents/GitHub/Toaster"/>
+				<Option output="/Users/jacklomax/Documents/GitHub/Toaster/cmake-build-debug/Toaster" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/jacklomax/Documents/GitHub/Toaster/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -61,8 +61,8 @@
 				</MakeCommands>
 			</Target>
 			<Target title="Toaster/fast">
-				<Option output="/Users/jacklomax/Documents/GitHub/Toaster/Toaster" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/jacklomax/Documents/GitHub/Toaster"/>
+				<Option output="/Users/jacklomax/Documents/GitHub/Toaster/cmake-build-debug/Toaster" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/jacklomax/Documents/GitHub/Toaster/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -115,33 +115,6 @@
 			<Option target="Toaster"/>
 		</Unit>
 		<Unit filename="/Users/jacklomax/Documents/GitHub/Toaster/src/code/main.cpp">
-			<Option target="Toaster"/>
-		</Unit>
-		<Unit filename="/Users/jacklomax/Documents/GitHub/Toaster/src/headers/Buffer.hpp">
-			<Option target="Toaster"/>
-		</Unit>
-		<Unit filename="/Users/jacklomax/Documents/GitHub/Toaster/src/headers/Camera.hpp">
-			<Option target="Toaster"/>
-		</Unit>
-		<Unit filename="/Users/jacklomax/Documents/GitHub/Toaster/src/headers/EBO.hpp">
-			<Option target="Toaster"/>
-		</Unit>
-		<Unit filename="/Users/jacklomax/Documents/GitHub/Toaster/src/headers/HelperFunctions.hpp">
-			<Option target="Toaster"/>
-		</Unit>
-		<Unit filename="/Users/jacklomax/Documents/GitHub/Toaster/src/headers/Mesh.hpp">
-			<Option target="Toaster"/>
-		</Unit>
-		<Unit filename="/Users/jacklomax/Documents/GitHub/Toaster/src/headers/Shader.hpp">
-			<Option target="Toaster"/>
-		</Unit>
-		<Unit filename="/Users/jacklomax/Documents/GitHub/Toaster/src/headers/Texture.hpp">
-			<Option target="Toaster"/>
-		</Unit>
-		<Unit filename="/Users/jacklomax/Documents/GitHub/Toaster/src/headers/VAO.hpp">
-			<Option target="Toaster"/>
-		</Unit>
-		<Unit filename="/Users/jacklomax/Documents/GitHub/Toaster/src/headers/VBO.hpp">
 			<Option target="Toaster"/>
 		</Unit>
 		<Unit filename="/Users/jacklomax/Documents/GitHub/Toaster/CMakeLists.txt">

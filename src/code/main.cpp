@@ -65,7 +65,7 @@ int main()
     }
 
     //Create a window
-    glm::vec2 windowSize = glm::vec2(1920, 1080);
+    glm::vec2 windowSize = glm::vec2(1280, 720);
     GLFWwindow *window = CreateWindow(windowSize);
 
     if (!window)
@@ -82,17 +82,17 @@ int main()
     }
 
     glfwSetFramebufferSizeCallback(window, FramebufferSizeCallback);
-
+    glViewport(0, 0, windowSize.x, windowSize.y);
     #pragma endregion
 
-    glViewport(0, 0, windowSize.x, windowSize.y);
+
     glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
 
     std::vector<Vertex> verts(vertices, vertices + sizeof(vertices) / sizeof(Vertex));
     std::vector<GLuint> inds(indices, indices + sizeof(indices) / sizeof(GLuint));
     Texture texture("resources/textures/test.png", GL_TEXTURE_2D, 0, GL_RGBA, GL_UNSIGNED_BYTE);
     Mesh cube(verts, inds, texture);
-    Shader cubeShader("../resources/cubev.glsl", "../resources/cubef.glsl");
+    Shader cubeShader("../../resources/cubev.glsl", "../../resources/cubef.glsl");
 
     Camera camera;
     camera.SetProjectionMatrix(45.0f, (float) windowSize.x / (float) windowSize.y, 0.1f,100.0f);

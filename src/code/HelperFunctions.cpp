@@ -24,7 +24,9 @@ bool InitialiseGLFW()
 
 void FramebufferSizeCallback(GLFWwindow *window, int width, int height)
 {
-    glViewport(0, 0, width, height);
+    int frameBufferx, framebufferY;
+    glfwGetFramebufferSize(window, &frameBufferx, &framebufferY);
+    glViewport(0, 0, frameBufferx, framebufferY);
 }
 
 float Clamp(float input, float maxVal, float minVal)

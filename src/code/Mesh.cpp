@@ -36,9 +36,7 @@ void Mesh::Draw(Shader& shader, Camera& camera)
     model = glm::scale(model, scale);
     model = glm::translate(model, position);
     shader.SetMat4("model", model);
-
-    texture.TexUnit(shader, "texture", 0);
-
+    texture.Bind();
     vao.Bind();
     glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_INT, 0);
 }

@@ -10,19 +10,12 @@ class Texture
 {
 private:
     GLuint ID;
-    GLenum type;
+    GLuint texture;
 public:
-    Texture(const char *image, GLenum texType, GLenum slot, GLenum format, GLenum pixelType);
-
+    Texture(const char* filePath);
     Texture();
 
-    void TexUnit(Shader shader, const char *uniform, GLuint unit);
-
     void Bind();
-
-    void Unbind();
-
-    void Delete();
 };
 
 #endif

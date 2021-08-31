@@ -9,16 +9,16 @@
 
 const Vertex vertices[] = {
         //Top Positions
-        Vertex{glm::vec3(-0.5f, 0.5f, -0.5f), glm::vec3(), glm::vec3(), glm::vec2()},
-        Vertex{glm::vec3(-0.5f, 0.5f, 0.5f), glm::vec3(), glm::vec3(), glm::vec2()},
-        Vertex{glm::vec3(0.5f, 0.5f, 0.5f), glm::vec3(), glm::vec3(), glm::vec2()},
-        Vertex{glm::vec3(0.5f, 0.5f, -0.5f), glm::vec3(), glm::vec3(), glm::vec2()},
+        Vertex{glm::vec3(-0.5f, 0.5f, -0.5f), glm::vec3(), glm::vec3(1.0, 1.0, 1.0), glm::vec2(0.0f, 0.0f)},
+        Vertex{glm::vec3(-0.5f, 0.5f, 0.5f), glm::vec3(), glm::vec3(1.0, 1.0, 1.0), glm::vec2(0.0f, 1.0f)},
+        Vertex{glm::vec3(0.5f, 0.5f, 0.5f), glm::vec3(), glm::vec3(1.0, 1.0, 1.0), glm::vec2(1.0f, 1.0f)},
+        Vertex{glm::vec3(0.5f, 0.5f, -0.5f), glm::vec3(), glm::vec3(1.0, 1.0, 1.0), glm::vec2(1.0f, 0.0f)},
 
         //Bottom Positions
-        Vertex{glm::vec3(-0.5f, -0.5f, -0.5f), glm::vec3(), glm::vec3(), glm::vec2()},
-        Vertex{glm::vec3(-0.5f, -0.5f, 0.5f), glm::vec3(), glm::vec3(), glm::vec2()},
-        Vertex{glm::vec3(0.5f, -0.5f, 0.5f), glm::vec3(), glm::vec3(), glm::vec2()},
-        Vertex{glm::vec3(0.5f, -0.5f, -0.5f), glm::vec3(), glm::vec3(), glm::vec2()},
+        Vertex{glm::vec3(-0.5f, -0.5f, -0.5f), glm::vec3(), glm::vec3(1.0, 1.0, 1.0), glm::vec2()},
+        Vertex{glm::vec3(-0.5f, -0.5f, 0.5f), glm::vec3(), glm::vec3(1.0, 1.0, 1.0), glm::vec2()},
+        Vertex{glm::vec3(0.5f, -0.5f, 0.5f), glm::vec3(), glm::vec3(1.0, 1.0, 1.0), glm::vec2()},
+        Vertex{glm::vec3(0.5f, -0.5f, -0.5f), glm::vec3(), glm::vec3(1.0, 1.0, 1.0), glm::vec2()},
         };
 const GLuint indices[]{
     //Top
@@ -92,9 +92,9 @@ int main()
 
     std::vector<Vertex> verts(vertices, vertices + sizeof(vertices) / sizeof(Vertex));
     std::vector<GLuint> inds(indices, indices + sizeof(indices) / sizeof(GLuint));
-    Texture texture("resources/textures/test.png", GL_TEXTURE_2D, 0, GL_RGBA, GL_UNSIGNED_BYTE);
+    Texture texture("../../resources/textures/wall.jpg");
     Mesh cube(verts, inds, texture);
-    Shader cubeShader("../../resources/shaders/cubev.glsl", "../../resources/shaders/cubef.glsl");
+    Shader cubeShader("../../resources/shaders/defaultv.glsl", "../../resources/shaders/defaultf.glsl");
 
     Camera camera;
     camera.SetProjectionMatrix(45.0f, (float) windowSize.x / (float) windowSize.y, 0.1f,100.0f);

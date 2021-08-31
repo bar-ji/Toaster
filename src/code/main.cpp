@@ -5,20 +5,21 @@
 #include <glm/gtc/type_ptr.hpp>
 #include "../headers/HelperFunctions.hpp"
 #include "../headers/Mesh.hpp"
+#include "../headers/Light.hpp"
 #include "../headers/Camera.hpp"
 
 const Vertex vertices[] = {
         //Top Positions
-        Vertex{glm::vec3(-0.5f, 0.5f, -0.5f), glm::vec3(), glm::vec3(1.0, 1.0, 1.0), glm::vec2(0.0f, 0.0f)},
-        Vertex{glm::vec3(-0.5f, 0.5f, 0.5f), glm::vec3(), glm::vec3(1.0, 1.0, 1.0), glm::vec2(0.0f, 1.0f)},
-        Vertex{glm::vec3(0.5f, 0.5f, 0.5f), glm::vec3(), glm::vec3(1.0, 1.0, 1.0), glm::vec2(1.0f, 1.0f)},
-        Vertex{glm::vec3(0.5f, 0.5f, -0.5f), glm::vec3(), glm::vec3(1.0, 1.0, 1.0), glm::vec2(1.0f, 0.0f)},
+        Vertex{glm::vec3(-0.5f, 0.5f, -0.5f), glm::vec3(0.0f,  0.0f, -1.0f), glm::vec3(1.0, 1.0, 1.0), glm::vec2(0.0f, 0.0f)},
+        Vertex{glm::vec3(-0.5f, 0.5f, 0.5f), glm::vec3(0.0f,  0.0f, 1.0f), glm::vec3(1.0, 1.0, 1.0), glm::vec2(0.0f, 1.0f)},
+        Vertex{glm::vec3(0.5f, 0.5f, 0.5f), glm::vec3(0.0f,  0.0f, 1.0f), glm::vec3(1.0, 1.0, 1.0), glm::vec2(1.0f, 1.0f)},
+        Vertex{glm::vec3(0.5f, 0.5f, -0.5f), glm::vec3(0.0f,  0.0f, -1.0f), glm::vec3(1.0, 1.0, 1.0), glm::vec2(1.0f, 0.0f)},
 
         //Bottom Positions
-        Vertex{glm::vec3(-0.5f, -0.5f, -0.5f), glm::vec3(), glm::vec3(1.0, 1.0, 1.0), glm::vec2()},
-        Vertex{glm::vec3(-0.5f, -0.5f, 0.5f), glm::vec3(), glm::vec3(1.0, 1.0, 1.0), glm::vec2()},
-        Vertex{glm::vec3(0.5f, -0.5f, 0.5f), glm::vec3(), glm::vec3(1.0, 1.0, 1.0), glm::vec2()},
-        Vertex{glm::vec3(0.5f, -0.5f, -0.5f), glm::vec3(), glm::vec3(1.0, 1.0, 1.0), glm::vec2()},
+        Vertex{glm::vec3(-0.5f, -0.5f, -0.5f), glm::vec3(0.0f, 0.0f, -1.0f), glm::vec3(1.0, 1.0, 1.0), glm::vec2()},
+        Vertex{glm::vec3(-0.5f, -0.5f, 0.5f), glm::vec3(0.0f, 0.0f, -1.0f), glm::vec3(1.0, 1.0, 1.0), glm::vec2()},
+        Vertex{glm::vec3(0.5f, -0.5f, 0.5f), glm::vec3(0.0f,  0.0f, 1.0f), glm::vec3(1.0, 1.0, 1.0), glm::vec2()},
+        Vertex{glm::vec3(0.5f, -0.5f, -0.5f), glm::vec3(0.0f,  0.0f, -1.0f), glm::vec3(1.0, 1.0, 1.0), glm::vec2()},
         };
 const GLuint indices[]{
     //Top
@@ -95,6 +96,11 @@ int main()
     Texture texture("../../resources/textures/wall.jpg");
     Mesh cube(verts, inds, texture);
     Shader cubeShader("../../resources/shaders/defaultv.glsl", "../../resources/shaders/defaultf.glsl");
+
+    Light light(glm::vec3(0.0f, 1.0f, 0.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec4(1.0f, 1.0f, 1.0f, 1.0f));
+    cubeShader.Use();
+    cubeShader.SetVec3("lightColor", light.GetColor());
+    cubeShader.SetVec3("lightPos", light.GetPosition());
 
     Camera camera;
     camera.SetProjectionMatrix(45.0f, (float) windowSize.x / (float) windowSize.y, 0.1f,100.0f);

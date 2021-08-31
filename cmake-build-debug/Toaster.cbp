@@ -8,116 +8,121 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/jacklomax/Documents/GitHub/Toaster/cmake-build-debug"/>
+				<Option working_dir="C:/Users/BARJI/Desktop/Toaster/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/jacklomax/Documents/GitHub/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/jacklomax/Documents/GitHub/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/jacklomax/Documents/GitHub/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/jacklomax/Documents/GitHub/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="rebuild_cache">
-				<Option working_dir="/Users/jacklomax/Documents/GitHub/Toaster/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/jacklomax/Documents/GitHub/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/jacklomax/Documents/GitHub/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/jacklomax/Documents/GitHub/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/jacklomax/Documents/GitHub/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="/Users/jacklomax/Documents/GitHub/Toaster/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/jacklomax/Documents/GitHub/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/jacklomax/Documents/GitHub/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/jacklomax/Documents/GitHub/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/jacklomax/Documents/GitHub/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Desktop/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Desktop/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Desktop/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Desktop/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Toaster">
-				<Option output="/Users/jacklomax/Documents/GitHub/Toaster/builds/apple/Toaster" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/jacklomax/Documents/GitHub/Toaster/builds/apple"/>
+				<Option output="C:/Users/BARJI/Desktop/Toaster/builds/windows/Toaster.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/BARJI/Desktop/Toaster/builds/windows"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add option="-DAPPLE"/>
-					<Add directory="/Users/jacklomax/Documents/GitHub/Toaster/include/apple"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.5/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add option="-DWINDOWS"/>
+					<Add directory="C:/Users/BARJI/Desktop/Toaster/include/windows"/>
+					<Add directory="C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../include/c++/10.3.0"/>
+					<Add directory="C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../include/c++/10.3.0/x86_64-w64-mingw32"/>
+					<Add directory="C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../include/c++/10.3.0/backward"/>
+					<Add directory="C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/include"/>
+					<Add directory="C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../include"/>
+					<Add directory="C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/include-fixed"/>
+					<Add directory="C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/jacklomax/Documents/GitHub/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 Toaster"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/jacklomax/Documents/GitHub/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/jacklomax/Documents/GitHub/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/jacklomax/Documents/GitHub/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Desktop/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 Toaster"/>
+					<CompileFile command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Desktop/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Desktop/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Desktop/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Toaster/fast">
-				<Option output="/Users/jacklomax/Documents/GitHub/Toaster/builds/apple/Toaster" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/jacklomax/Documents/GitHub/Toaster/builds/apple"/>
+				<Option output="C:/Users/BARJI/Desktop/Toaster/builds/windows/Toaster.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/BARJI/Desktop/Toaster/builds/windows"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add option="-DAPPLE"/>
-					<Add directory="/Users/jacklomax/Documents/GitHub/Toaster/include/apple"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.5/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add option="-DWINDOWS"/>
+					<Add directory="C:/Users/BARJI/Desktop/Toaster/include/windows"/>
+					<Add directory="C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../include/c++/10.3.0"/>
+					<Add directory="C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../include/c++/10.3.0/x86_64-w64-mingw32"/>
+					<Add directory="C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../include/c++/10.3.0/backward"/>
+					<Add directory="C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/include"/>
+					<Add directory="C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../include"/>
+					<Add directory="C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/include-fixed"/>
+					<Add directory="C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/jacklomax/Documents/GitHub/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 Toaster/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/jacklomax/Documents/GitHub/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/jacklomax/Documents/GitHub/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/jacklomax/Documents/GitHub/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Desktop/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 Toaster/fast"/>
+					<CompileFile command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Desktop/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Desktop/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Desktop/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/BARJI/Desktop/Toaster/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Desktop/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Desktop/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Desktop/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Desktop/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/BARJI/Desktop/Toaster/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Desktop/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Desktop/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Desktop/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/BARJI/Desktop/Toaster/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/jacklomax/Documents/GitHub/Toaster/src/code/Camera.cpp">
+		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/code/Camera.cpp">
 			<Option target="Toaster"/>
 		</Unit>
-		<Unit filename="/Users/jacklomax/Documents/GitHub/Toaster/src/code/EBO.cpp">
+		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/code/EBO.cpp">
 			<Option target="Toaster"/>
 		</Unit>
-		<Unit filename="/Users/jacklomax/Documents/GitHub/Toaster/src/code/HelperFunctions.cpp">
+		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/code/HelperFunctions.cpp">
 			<Option target="Toaster"/>
 		</Unit>
-		<Unit filename="/Users/jacklomax/Documents/GitHub/Toaster/src/code/ImageLoader.cpp">
+		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/code/ImageLoader.cpp">
 			<Option target="Toaster"/>
 		</Unit>
-		<Unit filename="/Users/jacklomax/Documents/GitHub/Toaster/src/code/Mesh.cpp">
+		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/code/Light.cpp">
 			<Option target="Toaster"/>
 		</Unit>
-		<Unit filename="/Users/jacklomax/Documents/GitHub/Toaster/src/code/Shader.cpp">
+		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/code/Mesh.cpp">
 			<Option target="Toaster"/>
 		</Unit>
-		<Unit filename="/Users/jacklomax/Documents/GitHub/Toaster/src/code/Texture.cpp">
+		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/code/Shader.cpp">
 			<Option target="Toaster"/>
 		</Unit>
-		<Unit filename="/Users/jacklomax/Documents/GitHub/Toaster/src/code/VAO.cpp">
+		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/code/Texture.cpp">
 			<Option target="Toaster"/>
 		</Unit>
-		<Unit filename="/Users/jacklomax/Documents/GitHub/Toaster/src/code/VBO.cpp">
+		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/code/VAO.cpp">
 			<Option target="Toaster"/>
 		</Unit>
-		<Unit filename="/Users/jacklomax/Documents/GitHub/Toaster/src/code/glad.c">
+		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/code/VBO.cpp">
 			<Option target="Toaster"/>
 		</Unit>
-		<Unit filename="/Users/jacklomax/Documents/GitHub/Toaster/src/code/main.cpp">
+		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/code/glad.c">
 			<Option target="Toaster"/>
 		</Unit>
-		<Unit filename="/Users/jacklomax/Documents/GitHub/Toaster/CMakeLists.txt">
+		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/code/main.cpp">
+			<Option target="Toaster"/>
+		</Unit>
+		<Unit filename="C:/Users/BARJI/Desktop/Toaster/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

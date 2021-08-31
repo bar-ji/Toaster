@@ -13,6 +13,7 @@ out vec3 position;
 out vec3 normal;
 out vec3 color;
 out vec2 texCoord;
+out vec3 fragPos;
 
 uniform mat4 model;
 uniform mat4 view;
@@ -25,5 +26,6 @@ void main()
     normal = aNormal;
     color = aColor;
     texCoord = aTexCoord;
+    fragPos = vec3(model * vec4(aPos, 1.0f));
 }
 

@@ -21,10 +21,19 @@ private :
 
     VAO vao;
 public:
-    Mesh(std::vector <Vertex>& vertices, std::vector <GLuint>& indices, Texture texture);
-
+    Mesh(std::vector <Vertex> vertices, std::vector <GLuint> indices, Texture texture);
     void Draw(Shader& shader, Camera& camera);
+
+    glm::vec3 GetPosition();
+    glm::vec3 GetRotation();
+    glm::vec3 GetScale();
+
+    void SetPosition(glm::vec3 position);
+    void SetRotation(glm::vec3 rotation);
+    void SetScale(glm::vec3 scale);
 };
+
+
 
 
 #endif

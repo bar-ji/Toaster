@@ -1,6 +1,6 @@
 #include "../headers/Mesh.hpp"
 
-Mesh::Mesh(std::vector <Vertex>& vertices, std::vector <GLuint>& indices, Texture texture)
+Mesh::Mesh(std::vector <Vertex> vertices, std::vector <GLuint> indices, Texture texture)
 {
     Mesh::vertices = vertices;
     Mesh::indices = indices;
@@ -39,4 +39,34 @@ void Mesh::Draw(Shader& shader, Camera& camera)
     texture.Bind();
     vao.Bind();
     glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_INT, 0);
+}
+
+void Mesh::SetPosition(glm::vec3 position)
+{
+    Mesh::position = position;
+}
+
+void Mesh::SetRotation(glm::vec3 rotation)
+{
+    Mesh::rotation = rotation;
+}
+
+void Mesh::SetScale(glm::vec3 scale)
+{
+    Mesh::scale = scale;
+}
+
+glm::vec3 Mesh::GetPosition()
+{
+    return position;
+}
+
+glm::vec3 Mesh::GetRotation()
+{
+    return rotation;
+}
+
+glm::vec3 Mesh::GetScale()
+{
+    return scale;
 }

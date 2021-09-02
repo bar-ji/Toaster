@@ -10,16 +10,16 @@
 
 const Vertex vertices[] = {
         //Top Positions
-        Vertex{glm::vec3(-0.5f, 0.5f, -0.5f), glm::vec3(0.0f,  0.0f, -1.0f), glm::vec3(1.0, 1.0, 1.0), glm::vec2(0.0f, 0.0f)},
-        Vertex{glm::vec3(-0.5f, 0.5f, 0.5f), glm::vec3(0.0f,  0.0f, 1.0f), glm::vec3(1.0, 1.0, 1.0), glm::vec2(0.0f, 1.0f)},
-        Vertex{glm::vec3(0.5f, 0.5f, 0.5f), glm::vec3(0.0f,  0.0f, 1.0f), glm::vec3(1.0, 1.0, 1.0), glm::vec2(1.0f, 1.0f)},
-        Vertex{glm::vec3(0.5f, 0.5f, -0.5f), glm::vec3(0.0f,  0.0f, -1.0f), glm::vec3(1.0, 1.0, 1.0), glm::vec2(1.0f, 0.0f)},
+        Vertex{glm::vec3(-1.0f, 1.0f, -1.0f), glm::vec3(-1.0f, 1.0f, -1.0f), glm::vec3(1.0, 1.0, 1.0), glm::vec2(0.0f, 0.0f)},
+        Vertex{glm::vec3(-1.0f, 1.0f, 1.0f), glm::vec3(-1.0f, 1.0f, 1.0f), glm::vec3(1.0, 1.0, 1.0), glm::vec2(0.0f, 1.0f)},
+        Vertex{glm::vec3(1.0f, 1.0f, 1.0f), glm::vec3(1.0f, 1.0f, 1.0f), glm::vec3(1.0, 1.0, 1.0), glm::vec2(1.0f, 1.0f)},
+        Vertex{glm::vec3(1.0f, 1.0f, -1.0f), glm::vec3(1.0f, 1.0f, -1.0f), glm::vec3(1.0, 1.0, 1.0), glm::vec2(1.0f, 0.0f)},
 
         //Bottom Positions
-        Vertex{glm::vec3(-0.5f, -0.5f, -0.5f), glm::vec3(0.0f, 0.0f, -1.0f), glm::vec3(1.0, 1.0, 1.0), glm::vec2()},
-        Vertex{glm::vec3(-0.5f, -0.5f, 0.5f), glm::vec3(0.0f, 0.0f, -1.0f), glm::vec3(1.0, 1.0, 1.0), glm::vec2()},
-        Vertex{glm::vec3(0.5f, -0.5f, 0.5f), glm::vec3(0.0f,  0.0f, 1.0f), glm::vec3(1.0, 1.0, 1.0), glm::vec2()},
-        Vertex{glm::vec3(0.5f, -0.5f, -0.5f), glm::vec3(0.0f,  0.0f, -1.0f), glm::vec3(1.0, 1.0, 1.0), glm::vec2()},
+        Vertex{glm::vec3(-1.0f, -1.0f, -1.0f), glm::vec3(-1.0f, -1.0f, -1.0f), glm::vec3(1.0, 1.0, 1.0), glm::vec2()},
+        Vertex{glm::vec3(-1.0f, -1.0f, 1.0f), glm::vec3(-1.0f, -1.0f, 1.0f), glm::vec3(1.0, 1.0, 1.0), glm::vec2()},
+        Vertex{glm::vec3(1.0f, -1.0f, 1.0f), glm::vec3(1.0f, -1.0f, 1.0f), glm::vec3(1.0, 1.0, 1.0), glm::vec2()},
+        Vertex{glm::vec3(1.0f, -1.0f, -1.0f), glm::vec3(1.0f, -1.0f, -1.0f), glm::vec3(1.0, 1.0, 1.0), glm::vec2()},
         };
 const GLuint indices[]{
     //Top
@@ -94,10 +94,12 @@ int main()
     std::vector<Vertex> verts(vertices, vertices + sizeof(vertices) / sizeof(Vertex));
     std::vector<GLuint> inds(indices, indices + sizeof(indices) / sizeof(GLuint));
     Texture texture("../../resources/textures/wall.jpg");
-    Mesh cube(verts, inds, texture);
-    Shader cubeShader("../../resources/shaders/defaultv.glsl", "../../resources/shaders/defaultf.glsl");
 
-    Light light(glm::vec3(0.0f, 1.0f, 0.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec4(1.0f, 1.0f, 1.0f, 1.0f));
+    Light light(glm::vec3(0.0f, 20.0f, 0.0f),  glm::vec3(1.0f, 1.0f, 1.0f));
+
+    Mesh cube(verts, inds, texture);
+    cube.SetScale(glm::vec3(0.5f, 0.5f, 0.5f));
+    Shader cubeShader("../../resources/shaders/defaultv.glsl", "../../resources/shaders/defaultf.glsl");
     cubeShader.Use();
     cubeShader.SetVec3("lightColor", light.GetColor());
     cubeShader.SetVec3("lightPos", light.GetPosition());

@@ -20,10 +20,10 @@ FILE(GLOB SOURCE_FILES "${PROJECT_SOURCE_DIR}/src/code/*.cpp" "${PROJECT_SOURCE_
 FILE(GLOB HEADER_FILES "${PROJECT_SOURCE_DIR}/src/headers/*.hpp/src/headers/*.hpp" "${PROJECT_SOURCE_DIR}/src/headers/*.h")
 add_executable(Toaster ${SOURCE_FILES} ${HEADER_FILES})
 if(APPLE)
-    target_link_libraries(${PROJECT_NAME} glfw3 "-framework Cocoa" "-framework OpenGL" "-framework IOKit")
+    target_link_libraries(${PROJECT_NAME} glfw3 assimp "-framework Cocoa" "-framework OpenGL" "-framework IOKit")
     add_compile_definitions(APPLE)
 else()
-    target_link_libraries(${PROJECT_NAME} glfw3 opengl32)
+    target_link_libraries(${PROJECT_NAME} glfw3 opengl32 assimp)
     add_compile_definitions(WINDOWS)
 endif()
 

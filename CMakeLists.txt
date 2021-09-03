@@ -23,7 +23,7 @@ if(APPLE)
     target_link_libraries(${PROJECT_NAME} glfw3 assimp "-framework Cocoa" "-framework OpenGL" "-framework IOKit")
     add_compile_definitions(APPLE)
 else()
-    target_link_libraries(${PROJECT_NAME} glfw3 opengl32 assimp)
+    target_link_libraries(${PROJECT_NAME} opengl32 glfw3 assimp IrrXML zlib)
     add_compile_definitions(WINDOWS)
 endif()
 

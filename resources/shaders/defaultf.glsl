@@ -4,10 +4,9 @@ out vec4 FragColor;
 
 in vec3 position;
 in vec3 normal;
-in vec3 color;
 in vec2 texCoord;
 in vec3 fragPos;
-uniform sampler2D ourTexture;
+uniform sampler2D texture_diffuse1;
 
 uniform vec3 lightColor;
 
@@ -25,5 +24,5 @@ void main()
     float diff = max(dot(norm, lightDir), 0.0f);
     vec3 diffuse = diff * lightColor;
     vec3 result = (ambient + diffuse);
-    FragColor = texture(ourTexture, texCoord) * vec4(result, 1.0f);
+    FragColor = texture(texture_diffuse1, texCoord) * vec4(result, 1.0f);
 }

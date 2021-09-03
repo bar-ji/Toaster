@@ -1,14 +1,10 @@
 #include "../headers/Mesh.hpp"
 
-Mesh::Mesh(std::vector <Vertex> vertices, std::vector <GLuint> indices, Texture texture)
+Mesh::Mesh(std::vector <Vertex> vertices, std::vector <GLuint> indices, std::vector<Texture> textures)
 {
     Mesh::vertices = vertices;
     Mesh::indices = indices;
-    Mesh::texture = texture;
-
-    Mesh::position = glm::vec3();
-    Mesh::scale = glm::vec3(1.0f, 1.0f, 1.0f);
-    Mesh::rotation = glm::vec3(0.0f, 0.0f, 0.0f);
+    Mesh::textures = textures;
 
     vao.Bind();
 
@@ -27,46 +23,28 @@ Mesh::Mesh(std::vector <Vertex> vertices, std::vector <GLuint> indices, Texture 
     vao.Unbind();
 }
 
-void Mesh::Draw(Shader& shader, Camera& camera)
+void Mesh::Draw(Shader& shader)
 {
     shader.Use();
-    shader.SetMat4("projection", camera.GetProjectionMatrix());
-    shader.SetMat4("view", camera.GetViewMatrix());
-    glm::mat4 model = glm::mat4(1.0f);
-    model = glm::scale(model, scale);
-    model = glm::translate(model, position);
-    shader.SetMat4("model", model);
-    texture.Bind();
+
+    unsigned int diffuseNr = 1;
+    unsigned int specularNr = 1;
+    for(unsigned int i = 0; i < textures.size(); i++)
+    {
+        glActiveTexture(GL_TEXTURE0 + i);
+        std::string number;
+        std::string name = textures[i].type;
+        if(name == "texture_diffuse")
+            number = std::to_string(diffuseNr++);
+        else if(name == "texture_specular")
+            number = std::to_string(specularNr++);
+
+        shader.SetFloat(("material." + name + number).c_str(), i);
+        glBindTexture(GL_TEXTURE_2D, textures[i].id);
+    }
+    glActiveTexture(GL_TEXTURE0);
+
     vao.Bind();
     glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_INT, 0);
-}
-
-void Mesh::SetPosition(glm::vec3 position)
-{
-    Mesh::position = position;
-}
-
-void Mesh::SetRotation(glm::vec3 rotation)
-{
-    Mesh::rotation = rotation;
-}
-
-void Mesh::SetScale(glm::vec3 scale)
-{
-    Mesh::scale = scale;
-}
-
-glm::vec3 Mesh::GetPosition()
-{
-    return position;
-}
-
-glm::vec3 Mesh::GetRotation()
-{
-    return rotation;
-}
-
-glm::vec3 Mesh::GetScale()
-{
-    return scale;
+    vao.Unbind();
 }

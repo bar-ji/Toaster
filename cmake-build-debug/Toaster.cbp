@@ -107,9 +107,6 @@
 		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/code/Shader.cpp">
 			<Option target="Toaster"/>
 		</Unit>
-		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/code/Texture.cpp">
-			<Option target="Toaster"/>
-		</Unit>
 		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/code/VAO.cpp">
 			<Option target="Toaster"/>
 		</Unit>

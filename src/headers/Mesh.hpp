@@ -6,23 +6,25 @@
 #include "VBO.hpp"
 #include "EBO.hpp"
 #include "Camera.hpp"
-#include "Texture.hpp"
+#include "Shader.hpp"
+
+struct Texture
+{
+    unsigned int id;
+    std::string type;
+    std::string path;
+};
 
 class Mesh
 {
 private :
     std::vector<Vertex> vertices;
     std::vector<GLuint> indices;
-    Texture texture;
-
-    glm::vec3 position;
-    glm::vec3 scale;
-    glm::vec3 rotation;
-
+    std::vector<Texture> textures;
     VAO vao;
 public:
-    Mesh(std::vector <Vertex> vertices, std::vector <GLuint> indices, Texture texture);
-    void Draw(Shader& shader, Camera& camera);
+    Mesh(std::vector <Vertex> vertices, std::vector <GLuint> indices, std::vector<Texture> textures);
+    void Draw(Shader& shader);
 
     glm::vec3 GetPosition();
     glm::vec3 GetRotation();

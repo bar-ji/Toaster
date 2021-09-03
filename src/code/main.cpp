@@ -7,45 +7,8 @@
 #include "../headers/Mesh.hpp"
 #include "../headers/Light.hpp"
 #include "../headers/Camera.hpp"
-
-const Vertex vertices[] = {
-        //Top Positions
-        Vertex{glm::vec3(-1.0f, 1.0f, -1.0f), glm::vec3(-1.0f, 1.0f, -1.0f), glm::vec3(1.0, 1.0, 1.0), glm::vec2(0.0f, 0.0f)},
-        Vertex{glm::vec3(-1.0f, 1.0f, 1.0f), glm::vec3(-1.0f, 1.0f, 1.0f), glm::vec3(1.0, 1.0, 1.0), glm::vec2(0.0f, 1.0f)},
-        Vertex{glm::vec3(1.0f, 1.0f, 1.0f), glm::vec3(1.0f, 1.0f, 1.0f), glm::vec3(1.0, 1.0, 1.0), glm::vec2(1.0f, 1.0f)},
-        Vertex{glm::vec3(1.0f, 1.0f, -1.0f), glm::vec3(1.0f, 1.0f, -1.0f), glm::vec3(1.0, 1.0, 1.0), glm::vec2(1.0f, 0.0f)},
-
-        //Bottom Positions
-        Vertex{glm::vec3(-1.0f, -1.0f, -1.0f), glm::vec3(-1.0f, -1.0f, -1.0f), glm::vec3(1.0, 1.0, 1.0), glm::vec2()},
-        Vertex{glm::vec3(-1.0f, -1.0f, 1.0f), glm::vec3(-1.0f, -1.0f, 1.0f), glm::vec3(1.0, 1.0, 1.0), glm::vec2()},
-        Vertex{glm::vec3(1.0f, -1.0f, 1.0f), glm::vec3(1.0f, -1.0f, 1.0f), glm::vec3(1.0, 1.0, 1.0), glm::vec2()},
-        Vertex{glm::vec3(1.0f, -1.0f, -1.0f), glm::vec3(1.0f, -1.0f, -1.0f), glm::vec3(1.0, 1.0, 1.0), glm::vec2()},
-        };
-const GLuint indices[]{
-    //Top
-    0, 1, 2,
-    2, 3, 0,
-
-    //Bottom
-    4, 5, 6,
-    6, 7, 4,
-
-    //Right
-    2, 3, 7,
-    7, 6, 2,
-
-    //Left
-    0, 1, 5,
-    5, 4, 0,
-
-    //Front
-    1, 2, 6,
-    6, 5, 1,
-
-    //Back
-    0, 3, 7,
-    7, 4, 0
-};
+#include "../headers/Model.hpp"
+#include "../headers/Shader.hpp"
 
 
 void HandleDeltaTime(float &deltaTime, float &lastFrame);
@@ -89,14 +52,8 @@ int main()
 
     glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
 
-    std::vector<Vertex> verts(vertices, vertices + sizeof(vertices) / sizeof(Vertex));
-    std::vector<GLuint> inds(indices, indices + sizeof(indices) / sizeof(GLuint));
-    Texture texture("../../resources/textures/wall.jpg");
-
     Light light(glm::vec3(0.0f, 20.0f, 0.0f),  glm::vec3(1.0f, 1.0f, 1.0f));
 
-    Mesh cube(verts, inds, texture);
-    cube.SetScale(glm::vec3(0.5f, 0.5f, 0.5f));
     Shader cubeShader("../../resources/shaders/defaultv.glsl", "../../resources/shaders/defaultf.glsl");
     cubeShader.Use();
     cubeShader.SetVec3("lightColor", light.GetColor());
@@ -105,13 +62,23 @@ int main()
     Camera camera;
     camera.SetProjectionMatrix(45.0f, (float) windowSize.x / (float) windowSize.y, 0.1f,100.0f);
 
+    Model backpackModel("../../resources/models/backpack/backpack.obj");
+
     glEnable(GL_DEPTH_TEST);
     while (!glfwWindowShouldClose(window))
     {
         HandleDeltaTime(deltaTime, lastFrame);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         camera.InputHandler(window, deltaTime);
-        cube.Draw(cubeShader, camera);
+        glm::mat4 view = camera.GetViewMatrix();
+        glm::mat4 projection = camera.GetProjectionMatrix();
+        glm::mat4 model = glm::mat4(1.0f);
+        model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+        model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+        cubeShader.SetMat4("model", model);
+        cubeShader.SetMat4("view", view);
+        cubeShader.SetMat4("projection", projection);
+        backpackModel.Draw(cubeShader);
         glfwSwapBuffers(window);
         glfwPollEvents();
     }

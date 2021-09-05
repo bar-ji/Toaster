@@ -1,3 +1,7 @@
+#include <imGUI/imgui.h>
+#include <imGUI/imgui_impl_glfw.h>
+#include <imGUI/imgui_impl_opengl3.h>
+
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
@@ -9,6 +13,7 @@
 #include "../headers/Camera.hpp"
 #include "../headers/Model.hpp"
 #include "../headers/Shader.hpp"
+#include "../headers/Renderer.hpp"
 
 
 void HandleDeltaTime(float &deltaTime, float &lastFrame);
@@ -47,6 +52,15 @@ int main()
     int frameBufferx, framebufferY;
     glfwGetFramebufferSize(window, &frameBufferx, &framebufferY);
     glViewport(0, 0, frameBufferx, framebufferY);
+
+    //IMGUI
+    IMGUI_CHECKVERSION();
+    ImGui::CreateContext();
+    ImGuiIO& io = ImGui::GetIO(); (void)io;
+    ImGui::StyleColorsDark();
+    ImGui_ImplGlfw_InitForOpenGL(window, true);
+    ImGui_ImplOpenGL3_Init("#version 330");
+
     #pragma endregion
 
 
@@ -54,15 +68,12 @@ int main()
 
     Light light(glm::vec3(0.0f, 20.0f, 0.0f),  glm::vec3(1.0f, 1.0f, 1.0f));
 
-    Shader cubeShader("../../resources/shaders/defaultv.glsl", "../../resources/shaders/defaultf.glsl");
-    cubeShader.Use();
-    cubeShader.SetVec3("lightColor", light.GetColor());
-    cubeShader.SetVec3("lightPos", light.GetPosition());
+    Shader shader("../../resources/shaders/defaultv.glsl", "../../resources/shaders/defaultf.glsl");
 
     Camera camera;
     camera.SetProjectionMatrix(45.0f, (float) windowSize.x / (float) windowSize.y, 0.1f,100.0f);
-
-    Model backpackModel("../../resources/models/backpack/backpack.obj");
+    Model* backpackModel = new Model("../../resources/models/backpack/backpack.obj");
+    Renderer renderer;
 
     glEnable(GL_DEPTH_TEST);
     while (!glfwWindowShouldClose(window))
@@ -70,15 +81,7 @@ int main()
         HandleDeltaTime(deltaTime, lastFrame);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         camera.InputHandler(window, deltaTime);
-        glm::mat4 view = camera.GetViewMatrix();
-        glm::mat4 projection = camera.GetProjectionMatrix();
-        glm::mat4 model = glm::mat4(1.0f);
-        model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-        model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
-        cubeShader.SetMat4("model", model);
-        cubeShader.SetMat4("view", view);
-        cubeShader.SetMat4("projection", projection);
-        backpackModel.Draw(cubeShader);
+        renderer.DrawModel(backpackModel, shader, camera, light);
         glfwSwapBuffers(window);
         glfwPollEvents();
     }

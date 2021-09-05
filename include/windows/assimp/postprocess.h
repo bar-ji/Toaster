@@ -258,7 +258,7 @@ enum aiPostProcessSteps
      *   keyframes with the same time), but further postprocessing and use
      *   of the data structure is still safe. Warning details are written
      *   to the log file, <tt>#AI_SCENE_FLAGS_VALIDATION_WARNING</tt> is set
-     *   in #aiScene::mFlags</li>
+     *   in #aiScene::flags</li>
      * </ul>
      *
      * This post-processing step is not time-consuming. Its use is not

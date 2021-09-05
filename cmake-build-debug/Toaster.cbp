@@ -86,6 +86,36 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/BARJI/Desktop/Toaster/include/windows/imGUI/imgui.cpp">
+			<Option target="Toaster"/>
+		</Unit>
+		<Unit filename="C:/Users/BARJI/Desktop/Toaster/include/windows/imGUI/imgui.h">
+			<Option target="Toaster"/>
+		</Unit>
+		<Unit filename="C:/Users/BARJI/Desktop/Toaster/include/windows/imGUI/imgui_demo.cpp">
+			<Option target="Toaster"/>
+		</Unit>
+		<Unit filename="C:/Users/BARJI/Desktop/Toaster/include/windows/imGUI/imgui_draw.cpp">
+			<Option target="Toaster"/>
+		</Unit>
+		<Unit filename="C:/Users/BARJI/Desktop/Toaster/include/windows/imGUI/imgui_impl_glfw.cpp">
+			<Option target="Toaster"/>
+		</Unit>
+		<Unit filename="C:/Users/BARJI/Desktop/Toaster/include/windows/imGUI/imgui_impl_glfw.h">
+			<Option target="Toaster"/>
+		</Unit>
+		<Unit filename="C:/Users/BARJI/Desktop/Toaster/include/windows/imGUI/imgui_impl_opengl3.cpp">
+			<Option target="Toaster"/>
+		</Unit>
+		<Unit filename="C:/Users/BARJI/Desktop/Toaster/include/windows/imGUI/imgui_impl_opengl3.h">
+			<Option target="Toaster"/>
+		</Unit>
+		<Unit filename="C:/Users/BARJI/Desktop/Toaster/include/windows/imGUI/imgui_tables.cpp">
+			<Option target="Toaster"/>
+		</Unit>
+		<Unit filename="C:/Users/BARJI/Desktop/Toaster/include/windows/imGUI/imgui_widgets.cpp">
+			<Option target="Toaster"/>
+		</Unit>
 		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/code/Camera.cpp">
 			<Option target="Toaster"/>
 		</Unit>
@@ -102,6 +132,9 @@
 			<Option target="Toaster"/>
 		</Unit>
 		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/code/Mesh.cpp">
+			<Option target="Toaster"/>
+		</Unit>
+		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/code/Renderer.cpp">
 			<Option target="Toaster"/>
 		</Unit>
 		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/code/Shader.cpp">

@@ -565,7 +565,7 @@ enum aiMorphingMethod
 * @note The mPositions member is usually not optional. However, vertex positions
 * *could* be missing if the #AI_SCENE_FLAGS_INCOMPLETE flag is set in
 * @code
-* aiScene::mFlags
+* aiScene::flags
 * @endcode
 */
 struct aiMesh

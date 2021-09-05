@@ -246,7 +246,7 @@ struct aiScene
     * want to reject all scenes with the AI_SCENE_FLAGS_INCOMPLETE
     * bit set.
     */
-    unsigned int mFlags;
+    unsigned int flags;
 
     /** The root node of the hierarchy.
     *
@@ -349,7 +349,7 @@ struct aiScene
     //! Check whether the scene contains meshes
     //! Unless no special scene flags are set this will always be true.
     inline bool HasMeshes() const { 
-        return mMeshes != NULL && mNumMeshes > 0; 
+        return mMeshes != NULL && mNumMeshes > 0;
     }
 
     //! Check whether the scene contains materials

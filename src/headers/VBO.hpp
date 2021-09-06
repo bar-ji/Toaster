@@ -10,8 +10,8 @@ struct Vertex
     glm::vec3 position;
     glm::vec3 normal;
     glm::vec2 texUV;
-    glm::vec3 Tangent;
-    glm::vec3 Bitangent;
+    glm::vec3 tangent;
+    glm::vec3 bitangent;
 };
 class VBO : public Buffer
 {

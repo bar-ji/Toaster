@@ -1,16 +1,15 @@
 #include <imgui/imgui.h>
 #include <imgui/imgui_impl_glfw.h>
 #include <imgui/imgui_impl_opengl3.h>
+
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
+
 #include "../headers/HelperFunctions.hpp"
 #include "../headers/Light.hpp"
 #include "../headers/Model.hpp"
 #include "../headers/Renderer.hpp"
-
-
-void HandleDeltaTime(float &deltaTime, float &lastFrame);
 
 int main()
 {
@@ -57,36 +56,28 @@ int main()
 
     #pragma endregion
 
-
-    glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
-
     Light light(glm::vec3(0.0f, 20.0f, 0.0f),  glm::vec3(1.0f, 1.0f, 1.0f));
-
     Shader shader("../../resources/shaders/defaultv.glsl", "../../resources/shaders/defaultf.glsl");
-
-    Camera camera;
-    camera.SetProjectionMatrix(45.0f, (float) windowSize.x / (float) windowSize.y, 0.1f,100.0f);
+    Camera camera(windowSize);
     Model* backpackModel = new Model("../../resources/models/backpack/backpack.obj");
     Renderer renderer;
 
+    glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
     glEnable(GL_DEPTH_TEST);
     while (!glfwWindowShouldClose(window))
     {
-        HandleDeltaTime(deltaTime, lastFrame);
+        //Setup
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        HandleDeltaTime(deltaTime, lastFrame);
+        //Input
         camera.InputHandler(window, deltaTime);
+        //Drawing
         renderer.DrawModel(backpackModel, shader, camera, light);
+        //Cleaning
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
-
+    //All resources are free'd here due to the program end
     glfwTerminate();
     return 0;
-}
-
-void HandleDeltaTime(float &deltaTime, float &lastFrame)
-{
-    float currentFrame = glfwGetTime();
-    deltaTime = currentFrame - lastFrame;
-    lastFrame = currentFrame;
 }

@@ -1,19 +1,23 @@
 #include "../headers/Camera.hpp"
 
-Camera::Camera()
+Camera::Camera(glm::vec2 windowSize)
 {
     position = glm::vec3(0.0f, 0.0f, 1.0f);
     forward = glm::vec3(0.0f, 0.0f, -1.0f);
     up = glm::vec3(0.0f, 1.0f, 0.0f);
     rotation = glm::vec3(0.0f, 0.0f, 0.0f);
+
+    SetProjectionMatrix(45.0f, (float) windowSize.x / (float) windowSize.y, 0.1f,100.0f);
 }
 
-Camera::Camera(glm::vec3 position, glm::vec3 forward, glm::vec3 up, glm::vec3 rotation)
+Camera::Camera(glm::vec3 position, glm::vec3 forward, glm::vec3 up, glm::vec3 rotation, glm::vec2 windowSize)
 {
     Camera::position = position;
     Camera::forward = forward;
     Camera::up = up;
     Camera::rotation = rotation;
+
+    SetProjectionMatrix(45.0f, (float) windowSize.x / (float) windowSize.y, 0.1f,100.0f);
 }
 
 glm::mat4 Camera::GetViewMatrix()

@@ -34,3 +34,10 @@ float Clamp(float input, float maxVal, float minVal)
     if (input < minVal) input = minVal;
     return input;
 }
+
+void HandleDeltaTime(float &deltaTime, float &lastFrame)
+{
+    float currentFrame = glfwGetTime();
+    deltaTime = currentFrame - lastFrame;
+    lastFrame = currentFrame;
+}

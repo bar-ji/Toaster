@@ -134,6 +134,9 @@
 		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/code/Mesh.cpp">
 			<Option target="Toaster"/>
 		</Unit>
+		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/code/Model.cpp">
+			<Option target="Toaster"/>
+		</Unit>
 		<Unit filename="C:/Users/BARJI/Desktop/Toaster/src/code/Renderer.cpp">
 			<Option target="Toaster"/>
 		</Unit>

@@ -12,4 +12,6 @@ void FramebufferSizeCallback(GLFWwindow *window, int width, int height);
 
 float Clamp(float input, float maxVal, float minVal);
 
+void HandleDeltaTime(float &deltaTime, float &lastFrame);
+
 #endif

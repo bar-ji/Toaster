@@ -22,13 +22,10 @@ private:
     float aspectRatio;
     float nearPlane;
     float farPlane;
-
-    //Projection
-
 public:
-    Camera(glm::vec3 position, glm::vec3 forward, glm::vec3 up, glm::vec3 rotation);
+    Camera(glm::vec3 position, glm::vec3 forward, glm::vec3 up, glm::vec3 rotation, glm::vec2 windowSize);
 
-    Camera();
+    Camera(glm::vec2 windowSize);
 
     glm::mat4 GetViewMatrix();
 

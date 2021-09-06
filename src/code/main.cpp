@@ -60,7 +60,6 @@ int main()
     Shader shader("../../resources/shaders/defaultv.glsl", "../../resources/shaders/defaultf.glsl");
     Camera camera(windowSize);
     Model* backpackModel = new Model("../../resources/models/backpack/backpack.obj");
-    Renderer renderer;
 
     glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
     glEnable(GL_DEPTH_TEST);
@@ -69,15 +68,30 @@ int main()
         //Setup
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         HandleDeltaTime(deltaTime, lastFrame);
+        ImGui_ImplOpenGL3_NewFrame();
+        ImGui_ImplGlfw_NewFrame();
+        ImGui::NewFrame();
         //Input
         camera.InputHandler(window, deltaTime);
         //Drawing
-        renderer.DrawModel(backpackModel, shader, camera, light);
+        Renderer::GetInstance()->DrawModel(backpackModel, shader, camera, light);
+        ImGui::Begin("Toaster Settings");
+        ImGui::Text("Settings for Toaster");
+        ImGui::End();
+        ImGui::Render();
+        ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
         //Cleaning
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
-    //All resources are free'd here due to the program end
+    //Free resources
+    delete backpackModel;
+
+    ImGui_ImplOpenGL3_Shutdown();
+    ImGui_ImplGlfw_Shutdown();
+    ImGui::DestroyContext();
+
+    glfwDestroyWindow(window);
     glfwTerminate();
     return 0;
 }

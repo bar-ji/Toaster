@@ -5,13 +5,15 @@
 #include "Camera.hpp"
 #include "Light.hpp"
 
+//Singleton Pattern
 class Renderer
 {
 private:
-    Renderer* renderer;
+    static Renderer* instance;
+    Renderer(); //Private constructor therefore cannot be instantiated
 public:
-    Renderer();
-    void DrawModel(Model* model, Shader& shader, Camera& camera, Light& light);
+    static void DrawModel(Model* model, Shader& shader, Camera& camera, Light& light);
+    static Renderer* GetInstance();
 };
 
 #endif

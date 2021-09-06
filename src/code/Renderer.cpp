@@ -1,9 +1,6 @@
 #include "../headers/Renderer.hpp"
 
-Renderer::Renderer()
-{
-    renderer = this;
-}
+Renderer::Renderer(){}
 
 void Renderer::DrawModel(Model *model, Shader &shader, Camera &camera, Light& light)
 {
@@ -20,4 +17,15 @@ void Renderer::DrawModel(Model *model, Shader &shader, Camera &camera, Light& li
     shader.SetVec3("lightPos", light.GetPosition());
 
     model->Draw(shader);
+}
+
+Renderer* Renderer::instance = 0;
+
+Renderer* Renderer::GetInstance()
+{
+    if(instance == 0)
+    {
+        instance = new Renderer();
+    }
+    return instance;
 }

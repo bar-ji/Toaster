@@ -10,6 +10,11 @@
 #include "../headers/Light.hpp"
 #include "../headers/Model.hpp"
 #include "../headers/Renderer.hpp"
+#include "../headers/Settings.hpp"
+#include "../headers/Transform.hpp"
+
+
+void DrawUI();
 
 int main()
 {
@@ -62,24 +67,26 @@ int main()
     Model* backpackModel = new Model("../../resources/models/backpack/backpack.obj");
 
     glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
-    glEnable(GL_DEPTH_TEST);
     while (!glfwWindowShouldClose(window))
     {
         //Setup
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         HandleDeltaTime(deltaTime, lastFrame);
-        ImGui_ImplOpenGL3_NewFrame();
-        ImGui_ImplGlfw_NewFrame();
-        ImGui::NewFrame();
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+        if(clearDepth)
+            glEnable(GL_DEPTH_TEST);
+        else
+            glDisable(GL_DEPTH_TEST);
+        if(isWireframe)
+            glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+        else
+            glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
         //Input
         camera.InputHandler(window, deltaTime);
         //Drawing
-        Renderer::GetInstance()->DrawModel(backpackModel, shader, camera, light);
-        ImGui::Begin("Toaster Settings");
-        ImGui::Text("Settings for Toaster");
-        ImGui::End();
-        ImGui::Render();
-        ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+        shader.SetVec3("modelColor", glm::vec3(colorOverlay[0], colorOverlay[1], colorOverlay[2]));
+        Renderer::GetInstance()->DrawModel(backpackModel, shader, camera, light, Transform{glm::vec3(position[0], position[1], position[2]), glm::vec3(rotation[0], rotation[1], rotation[2]),glm::vec3(scale[0], scale[1], scale[2])});
+        DrawUI();
         //Cleaning
         glfwSwapBuffers(window);
         glfwPollEvents();
@@ -94,4 +101,57 @@ int main()
     glfwDestroyWindow(window);
     glfwTerminate();
     return 0;
+}
+
+void DrawUI()
+{
+    ImGui_ImplOpenGL3_NewFrame();
+    ImGui_ImplGlfw_NewFrame();
+    ImGui::NewFrame();
+
+    ImGui::Begin("Modifiers");
+    if(ImGui::CollapsingHeader("Controls:"))
+    {
+        ImGui::Text("Orbit: WASD");
+        ImGui::Text("Zoom In: Left Shift");
+        ImGui::Text("Zoom Out: Left Control");
+    }
+    if(ImGui::CollapsingHeader("Transformations:"))
+    {
+        ImGui::SliderFloat3("Position", position, -1.0f, 1.0f);
+        ImGui::SliderFloat3("Rotation", rotation, 0.0f, 360.0f);
+        ImGui::SliderFloat3("Scale", scale, 0.1f, 3.0f);
+        if(ImGui::Button("Reset Position"))
+        {
+            for(int i = 0; i < sizeof(position) / sizeof(float); i++){
+                position[i] = 0.0f;
+            }
+        }
+        if(ImGui::Button("Reset Rotation"))
+        {
+            for(int i = 0; i < sizeof(rotation) / sizeof(float); i++){
+                rotation[i] = 0.0f;
+            }
+        }
+        if(ImGui::Button("Reset Scale"))
+        {
+            for(int i = 0; i < sizeof(scale) / sizeof(float); i++){
+                scale[i] = 1.0f;
+            }
+        }
+    }
+    if(ImGui::CollapsingHeader("Colors:"))
+    {
+        ImGui::ColorEdit3("Hue", colorOverlay);
+    }
+    if(ImGui::CollapsingHeader("Rendering:"))
+    {
+        ImGui::Checkbox("Wireframe Mode", &isWireframe);
+        ImGui::Checkbox("Depth Test", &clearDepth);
+    }
+
+
+    ImGui::End();
+    ImGui::Render();
+    ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 }

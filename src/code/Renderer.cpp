@@ -2,10 +2,14 @@
 
 Renderer::Renderer(){}
 
-void Renderer::DrawModel(Model *model, Shader &shader, Camera &camera, Light& light)
+void Renderer::DrawModel(Model *model, Shader &shader, Camera &camera, Light& light, Transform transform)
 {
     glm::mat4 modelMatrix = glm::mat4(1.0f);
-    modelMatrix = glm::scale(modelMatrix, glm::vec3(1.0f, 1.0f, 1.0f));
+    modelMatrix = glm::rotate(modelMatrix, glm::radians(transform.rotation.x), glm::vec3(1.0f, 0.0f, 0.0f));
+    modelMatrix = glm::rotate(modelMatrix, glm::radians(transform.rotation.y), glm::vec3(0.0f, 1.0f, 0.0f));
+    modelMatrix = glm::rotate(modelMatrix, glm::radians(transform.rotation.z), glm::vec3(0.0f, 0.0f, 1.0f));
+    modelMatrix = glm::scale(modelMatrix, transform.scale);
+    modelMatrix = glm::translate(modelMatrix, transform.position);
     glm::mat4 projectionMatrix = camera.GetProjectionMatrix();
     glm::mat4 viewMatrix = camera.GetViewMatrix();
 

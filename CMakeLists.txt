@@ -16,7 +16,7 @@ else()
     set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/builds/windows)
 endif()
 
-FILE(GLOB SOURCE_FILES "${PROJECT_SOURCE_DIR}/src/code/*.cpp" "${PROJECT_SOURCE_DIR}/include/windows/imGUI/*.cpp" "${PROJECT_SOURCE_DIR}/src/code/*.c")
+FILE(GLOB SOURCE_FILES "${PROJECT_SOURCE_DIR}/src/code/*.cpp" "${PROJECT_SOURCE_DIR}/include/windows/imgui/*.cpp" "${PROJECT_SOURCE_DIR}/src/code/*.c")
 FILE(GLOB HEADER_FILES "${PROJECT_SOURCE_DIR}/src/headers/*.hpp/src/headers/*.hpp" "${PROJECT_SOURCE_DIR}/src/headers/*.h")
 add_executable(Toaster ${SOURCE_FILES} ${HEADER_FILES})
 if(APPLE)
